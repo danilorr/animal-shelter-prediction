@@ -1,0 +1,73 @@
+final_model_trainer:DEBUG 2021-12-22 19:27:23,627 -  Starting Class
+final_model_trainer:DEBUG 2021-12-22 19:27:23,630 -  Current train.head()
+   HasName      OutcomeType  IsCat  IsFemale  AgeuponOutcome  IsIntact
+0        1  Return_to_owner      0         0            1.00         0
+1        1       Euthanasia      1         1            1.00         0
+2        1         Adoption      0         0            2.00         0
+3        0         Transfer      1         0            0.10         1
+4        0         Transfer      0         0            2.00         0
+final_model_trainer:DEBUG 2021-12-22 19:27:23,636 -  Current train.info()
+<class 'pandas.core.frame.DataFrame'>
+Int64Index: 26729 entries, 0 to 26728
+Data columns (total 6 columns):
+ #   Column          Non-Null Count  Dtype  
+---  ------          --------------  -----  
+ 0   HasName         26729 non-null  int64  
+ 1   OutcomeType     26729 non-null  object 
+ 2   IsCat           26729 non-null  int64  
+ 3   IsFemale        26729 non-null  int64  
+ 4   AgeuponOutcome  26729 non-null  float64
+ 5   IsIntact        26729 non-null  int64  
+dtypes: float64(1), int64(4), object(1)
+memory usage: 1.4+ MB
+
+final_model_trainer:DEBUG 2021-12-22 19:27:23,650 -  Current train.describe()
+         HasName OutcomeType     IsCat  IsFemale  AgeuponOutcome  IsIntact
+count  26,729.00       26729 26,729.00 26,729.00       26,729.00 26,729.00
+unique       NaN           5       NaN       NaN             NaN       NaN
+top          NaN    Adoption       NaN       NaN             NaN       NaN
+freq         NaN       10769       NaN       NaN             NaN       NaN
+mean        0.71         NaN      0.42      0.42            2.18      0.22
+std         0.45         NaN      0.49      0.57            2.96      0.50
+min         0.00         NaN      0.00     -1.00            0.00     -1.00
+25%         0.00         NaN      0.00      0.00            0.20      0.00
+50%         1.00         NaN      0.00      0.00            1.00      0.00
+75%         1.00         NaN      1.00      1.00            3.00      1.00
+max         1.00         NaN      1.00      1.00           20.00      1.00
+final_model_trainer:DEBUG 2021-12-22 19:27:23,651 -  Current test.head()
+   HasName  IsCat  IsFemale  AgeuponOutcome  IsIntact
+0        1      0         1            0.80         1
+1        1      0         1            2.00         0
+2        1      1         0            1.00         0
+3        1      0         0            0.30         1
+4        1      0         0            2.00         0
+final_model_trainer:DEBUG 2021-12-22 19:27:23,655 -  Current test.info()
+<class 'pandas.core.frame.DataFrame'>
+Int64Index: 11456 entries, 0 to 11455
+Data columns (total 5 columns):
+ #   Column          Non-Null Count  Dtype  
+---  ------          --------------  -----  
+ 0   HasName         11456 non-null  int64  
+ 1   IsCat           11456 non-null  int64  
+ 2   IsFemale        11456 non-null  int64  
+ 3   AgeuponOutcome  11456 non-null  float64
+ 4   IsIntact        11456 non-null  int64  
+dtypes: float64(1), int64(4)
+memory usage: 537.0 KB
+
+final_model_trainer:DEBUG 2021-12-22 19:27:23,664 -  Current test.describe()
+        HasName     IsCat  IsFemale  AgeuponOutcome  IsIntact
+count 11,456.00 11,456.00 11,456.00       11,456.00 11,456.00
+mean       0.72      0.42      0.42            2.13      0.22
+std        0.45      0.49      0.57            2.94      0.50
+min        0.00      0.00     -1.00            0.00     -1.00
+25%        0.00      0.00      0.00            0.20      0.00
+50%        1.00      0.00      0.00            1.00      0.00
+75%        1.00      1.00      1.00            3.00      1.00
+max        1.00      1.00      1.00           22.00      1.00
+final_model_trainer:DEBUG 2021-12-22 19:27:23,664 -  Creating X and y dataframes
+final_model_trainer:DEBUG 2021-12-22 19:27:23,665 -  Creating train test split
+final_model_trainer:DEBUG 2021-12-22 19:27:23,684 -  Training model
+final_model_trainer:DEBUG 2021-12-22 19:27:24,974 -  Predicting test df
+final_model_trainer:DEBUG 2021-12-22 19:27:25,177 -  Generating prediction_heatmap.png
+final_model_trainer:DEBUG 2021-12-22 19:28:27,536 -  Closing Class

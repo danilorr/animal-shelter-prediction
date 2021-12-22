@@ -1,0 +1,145 @@
+data_processor:DEBUG 2021-12-22 16:39:18,549 -  Starting Class
+data_processor:DEBUG 2021-12-22 16:39:18,553 -  Current train.head()
+  AnimalID     Name            DateTime      OutcomeType OutcomeSubtype AnimalType SexuponOutcome AgeuponOutcome                        Breed        Color
+0  A671945  Hambone 2014-02-12 18:22:00  Return_to_owner            NaN        Dog  Neutered Male         1 year        Shetland Sheepdog Mix  Brown/White
+1  A656520    Emily 2013-10-13 12:44:00       Euthanasia      Suffering        Cat  Spayed Female         1 year       Domestic Shorthair Mix  Cream Tabby
+2  A686464   Pearce 2015-01-31 12:28:00         Adoption         Foster        Dog  Neutered Male        2 years                 Pit Bull Mix   Blue/White
+3  A683430      NaN 2014-07-11 19:09:00         Transfer        Partner        Cat    Intact Male        3 weeks       Domestic Shorthair Mix   Blue Cream
+4  A667013      NaN 2013-11-15 12:52:00         Transfer        Partner        Dog  Neutered Male        2 years  Lhasa Apso/Miniature Poodle          Tan
+data_processor:DEBUG 2021-12-22 16:39:18,567 -  Current train.info()
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 26729 entries, 0 to 26728
+Data columns (total 10 columns):
+ #   Column          Non-Null Count  Dtype         
+---  ------          --------------  -----         
+ 0   AnimalID        26729 non-null  object        
+ 1   Name            19038 non-null  object        
+ 2   DateTime        26729 non-null  datetime64[ns]
+ 3   OutcomeType     26729 non-null  object        
+ 4   OutcomeSubtype  13117 non-null  object        
+ 5   AnimalType      26729 non-null  object        
+ 6   SexuponOutcome  26728 non-null  object        
+ 7   AgeuponOutcome  26711 non-null  object        
+ 8   Breed           26729 non-null  object        
+ 9   Color           26729 non-null  object        
+dtypes: datetime64[ns](1), object(9)
+memory usage: 2.0+ MB
+
+data_processor:DEBUG 2021-12-22 16:39:18,611 -  Current train.describe()
+       AnimalID   Name                       DateTime OutcomeType OutcomeSubtype AnimalType SexuponOutcome AgeuponOutcome                   Breed        Color
+count     26729  19038                          26729       26729          13117      26729          26728          26711                   26729        26729
+unique    26729   6374                            NaN           5             16          2              5             44                    1380          366
+top     A671945    Max                            NaN    Adoption        Partner        Dog  Neutered Male         1 year  Domestic Shorthair Mix  Black/White
+freq          1    136                            NaN       10769           7816      15595           9779           3969                    8810         2824
+mean        NaN    NaN  2014-12-19 00:22:23.956003072         NaN            NaN        NaN            NaN            NaN                     NaN          NaN
+min         NaN    NaN            2013-10-01 09:31:00         NaN            NaN        NaN            NaN            NaN                     NaN          NaN
+25%         NaN    NaN            2014-05-31 16:31:00         NaN            NaN        NaN            NaN            NaN                     NaN          NaN
+50%         NaN    NaN            2014-12-13 17:10:00         NaN            NaN        NaN            NaN            NaN                     NaN          NaN
+75%         NaN    NaN            2015-07-19 19:48:00         NaN            NaN        NaN            NaN            NaN                     NaN          NaN
+max         NaN    NaN            2016-02-21 19:17:00         NaN            NaN        NaN            NaN            NaN                     NaN          NaN
+data_processor:DEBUG 2021-12-22 16:39:18,613 -  Current test.head()
+   ID      Name            DateTime AnimalType SexuponOutcome AgeuponOutcome                           Breed        Color
+0   1    Summer 2015-10-12 12:15:00        Dog  Intact Female      10 months          Labrador Retriever Mix    Red/White
+1   2  Cheyenne 2014-07-26 17:59:00        Dog  Spayed Female        2 years  German Shepherd/Siberian Husky    Black/Tan
+2   3       Gus 2016-01-13 12:20:00        Cat  Neutered Male         1 year          Domestic Shorthair Mix  Brown Tabby
+3   4     Pongo 2013-12-28 18:12:00        Dog    Intact Male       4 months               Collie Smooth Mix     Tricolor
+4   5   Skooter 2015-09-24 17:59:00        Dog  Neutered Male        2 years            Miniature Poodle Mix        White
+data_processor:DEBUG 2021-12-22 16:39:18,620 -  Current test.info()
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 11456 entries, 0 to 11455
+Data columns (total 8 columns):
+ #   Column          Non-Null Count  Dtype         
+---  ------          --------------  -----         
+ 0   ID              11456 non-null  int64         
+ 1   Name            8231 non-null   object        
+ 2   DateTime        11456 non-null  datetime64[ns]
+ 3   AnimalType      11456 non-null  object        
+ 4   SexuponOutcome  11456 non-null  object        
+ 5   AgeuponOutcome  11450 non-null  object        
+ 6   Breed           11456 non-null  object        
+ 7   Color           11456 non-null  object        
+dtypes: datetime64[ns](1), int64(1), object(6)
+memory usage: 716.1+ KB
+
+data_processor:DEBUG 2021-12-22 16:39:18,639 -  Current test.describe()
+              ID   Name                       DateTime AnimalType SexuponOutcome AgeuponOutcome                   Breed        Color
+count  11,456.00   8231                          11456      11456          11456          11450                   11456        11456
+unique       NaN   3712                            NaN          2              5             45                     913          277
+top          NaN  Bella                            NaN        Dog  Neutered Male         1 year  Domestic Shorthair Mix  Black/White
+freq         NaN     60                            NaN       6656           4235           1768                    3777         1219
+mean    5,728.50    NaN  2014-12-17 13:54:42.784567040        NaN            NaN            NaN                     NaN          NaN
+min         1.00    NaN            2013-10-01 10:44:00        NaN            NaN            NaN                     NaN          NaN
+25%     2,864.75    NaN            2014-05-28 11:42:30        NaN            NaN            NaN                     NaN          NaN
+50%     5,728.50    NaN            2014-12-07 11:32:00        NaN            NaN            NaN                     NaN          NaN
+75%     8,592.25    NaN            2015-07-22 09:48:30        NaN            NaN            NaN                     NaN          NaN
+max    11,456.00    NaN            2016-02-21 18:37:00        NaN            NaN            NaN                     NaN          NaN
+std     3,307.21    NaN                            NaN        NaN            NaN            NaN                     NaN          NaN
+data_processor:DEBUG 2021-12-22 16:39:19,419 -  Current train.head()
+   HasName      OutcomeType  IsCat  IsFemale  AgeuponOutcome  IsIntact
+0        1  Return_to_owner      0         0            1.00         0
+1        1       Euthanasia      1         1            1.00         0
+2        1         Adoption      0         0            2.00         0
+3        0         Transfer      1         0            0.10         1
+4        0         Transfer      0         0            2.00         0
+data_processor:DEBUG 2021-12-22 16:39:19,425 -  Current train.info()
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 26729 entries, 0 to 26728
+Data columns (total 6 columns):
+ #   Column          Non-Null Count  Dtype  
+---  ------          --------------  -----  
+ 0   HasName         26729 non-null  int64  
+ 1   OutcomeType     26729 non-null  object 
+ 2   IsCat           26729 non-null  int64  
+ 3   IsFemale        26729 non-null  int64  
+ 4   AgeuponOutcome  26729 non-null  float64
+ 5   IsIntact        26729 non-null  int64  
+dtypes: float64(1), int64(4), object(1)
+memory usage: 1.2+ MB
+
+data_processor:DEBUG 2021-12-22 16:39:19,438 -  Current train.describe()
+         HasName OutcomeType     IsCat  IsFemale  AgeuponOutcome  IsIntact
+count  26,729.00       26729 26,729.00 26,729.00       26,729.00 26,729.00
+unique       NaN           5       NaN       NaN             NaN       NaN
+top          NaN    Adoption       NaN       NaN             NaN       NaN
+freq         NaN       10769       NaN       NaN             NaN       NaN
+mean        0.71         NaN      0.42      0.42            2.18      0.22
+std         0.45         NaN      0.49      0.57            2.96      0.50
+min         0.00         NaN      0.00     -1.00            0.00     -1.00
+25%         0.00         NaN      0.00      0.00            0.20      0.00
+50%         1.00         NaN      0.00      0.00            1.00      0.00
+75%         1.00         NaN      1.00      1.00            3.00      1.00
+max         1.00         NaN      1.00      1.00           20.00      1.00
+data_processor:DEBUG 2021-12-22 16:39:19,440 -  Current test.head()
+   HasName  IsCat  IsFemale  AgeuponOutcome  IsIntact
+0        1      0         1            0.80         1
+1        1      0         1            2.00         0
+2        1      1         0            1.00         0
+3        1      0         0            0.30         1
+4        1      0         0            2.00         0
+data_processor:DEBUG 2021-12-22 16:39:19,444 -  Current test.info()
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 11456 entries, 0 to 11455
+Data columns (total 5 columns):
+ #   Column          Non-Null Count  Dtype  
+---  ------          --------------  -----  
+ 0   HasName         11456 non-null  int64  
+ 1   IsCat           11456 non-null  int64  
+ 2   IsFemale        11456 non-null  int64  
+ 3   AgeuponOutcome  11456 non-null  float64
+ 4   IsIntact        11456 non-null  int64  
+dtypes: float64(1), int64(4)
+memory usage: 447.6 KB
+
+data_processor:DEBUG 2021-12-22 16:39:19,452 -  Current test.describe()
+        HasName     IsCat  IsFemale  AgeuponOutcome  IsIntact
+count 11,456.00 11,456.00 11,456.00       11,456.00 11,456.00
+mean       0.72      0.42      0.42            2.13      0.22
+std        0.45      0.49      0.57            2.94      0.50
+min        0.00      0.00     -1.00            0.00     -1.00
+25%        0.00      0.00      0.00            0.20      0.00
+50%        1.00      0.00      0.00            1.00      0.00
+75%        1.00      1.00      1.00            3.00      1.00
+max        1.00      1.00      1.00           22.00      1.00
+data_processor:DEBUG 2021-12-22 16:39:19,452 -  Creating train.csv
+data_processor:DEBUG 2021-12-22 16:39:19,518 -  Creating test.csv
+data_processor:DEBUG 2021-12-22 16:39:19,543 -  Closing Class

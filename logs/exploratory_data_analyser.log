@@ -1,0 +1,36 @@
+exploratory_data_analysis:DEBUG 2021-12-22 20:27:22,576 -  Starting Class
+exploratory_data_analysis:DEBUG 2021-12-22 20:27:22,580 -  Current train.head()
+  AnimalID     Name             DateTime      OutcomeType OutcomeSubtype AnimalType SexuponOutcome AgeuponOutcome                        Breed        Color
+0  A671945  Hambone  2014-02-12 18:22:00  Return_to_owner            NaN        Dog  Neutered Male         1 year        Shetland Sheepdog Mix  Brown/White
+1  A656520    Emily  2013-10-13 12:44:00       Euthanasia      Suffering        Cat  Spayed Female         1 year       Domestic Shorthair Mix  Cream Tabby
+2  A686464   Pearce  2015-01-31 12:28:00         Adoption         Foster        Dog  Neutered Male        2 years                 Pit Bull Mix   Blue/White
+3  A683430      NaN  2014-07-11 19:09:00         Transfer        Partner        Cat    Intact Male        3 weeks       Domestic Shorthair Mix   Blue Cream
+4  A667013      NaN  2013-11-15 12:52:00         Transfer        Partner        Dog  Neutered Male        2 years  Lhasa Apso/Miniature Poodle          Tan
+exploratory_data_analysis:DEBUG 2021-12-22 20:27:22,594 -  Current train.info()
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 26729 entries, 0 to 26728
+Data columns (total 10 columns):
+ #   Column          Non-Null Count  Dtype 
+---  ------          --------------  ----- 
+ 0   AnimalID        26729 non-null  object
+ 1   Name            19038 non-null  object
+ 2   DateTime        26729 non-null  object
+ 3   OutcomeType     26729 non-null  object
+ 4   OutcomeSubtype  13117 non-null  object
+ 5   AnimalType      26729 non-null  object
+ 6   SexuponOutcome  26728 non-null  object
+ 7   AgeuponOutcome  26711 non-null  object
+ 8   Breed           26729 non-null  object
+ 9   Color           26729 non-null  object
+dtypes: object(10)
+memory usage: 2.0+ MB
+
+exploratory_data_analysis:DEBUG 2021-12-22 20:27:22,638 -  Current train.describe()
+       AnimalID   Name             DateTime OutcomeType OutcomeSubtype AnimalType SexuponOutcome AgeuponOutcome                   Breed        Color
+count     26729  19038                26729       26729          13117      26729          26728          26711                   26729        26729
+unique    26729   6374                22918           5             16          2              5             44                    1380          366
+top     A671945    Max  2015-08-11 00:00:00    Adoption        Partner        Dog  Neutered Male         1 year  Domestic Shorthair Mix  Black/White
+freq          1    136                   19       10769           7816      15595           9779           3969                    8810         2824
+exploratory_data_analysis:DEBUG 2021-12-22 20:27:23,092 -  Generating age_count_plot.png
+exploratory_data_analysis:DEBUG 2021-12-22 20:27:24,340 -  Generating sex_outcome_plot.png
+exploratory_data_analysis:DEBUG 2021-12-22 20:27:25,575 -  Closing Class
