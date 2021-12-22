@@ -101,6 +101,8 @@ class DataAnalyser:
         plt.yticks(np.linspace(0, 1, 11))
         plt.title('Outcome of ' + ganimal + ' grouped by ' + gtype)
         plt.ylabel('Fraction of outcomes')
+        fig.set_figheight(8)
+        fig.set_figwidth(12)
         plt.savefig(f'plots/{name}_plot.png')
 
     def create_age_plot1(self):
